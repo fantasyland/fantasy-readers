@@ -1,0 +1,29 @@
+{
+  "name": "fantasy-readers",
+  "version": "0.0.0",
+  "description": "Reader control structure.",
+  "main": "reader.js",
+  "dependencies": {
+    "daggy": "0.0.1"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.8.1"
+  },
+  "scripts": {
+    "test": "$(npm bin)/nodeunit test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/puffnfresh/fantasy-readers.git"
+  },
+  "keywords": [
+    "fantasyland",
+    "reader",
+    "monad"
+  ],
+  "author": "Brian McKenna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/puffnfresh/fantasy-readers/issues"
+  }
+}
