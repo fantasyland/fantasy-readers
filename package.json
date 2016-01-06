@@ -3,18 +3,9 @@
   "version": "0.0.1",
   "description": "Reader control structure.",
   "main": "reader.js",
-  "dependencies": {
-    "daggy": "0.0.1"
-  },
-  "devDependencies": {
-    "nodeunit": "~0.8.1"
-  },
-  "scripts": {
-    "test": "$(npm bin)/nodeunit test.js"
-  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/puffnfresh/fantasy-readers.git"
+    "url": "git://github.com/fantasyland/fantasy-readers.git"
   },
   "keywords": [
     "fantasyland",
@@ -24,6 +15,21 @@
   "author": "Brian McKenna",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/puffnfresh/fantasy-readers/issues"
-  }
+    "url": "https://github.com/fantasyland/fantasy-readers/issues"
+  },
+  "dependencies": {
+    "daggy": "0.0.1",
+    "fantasy-combinators": "0.0.1"
+  },
+  "devDependencies": {
+    "nodeunit": "0.9.x",
+    "fantasy-check": "0.1.6",
+    "fantasy-helpers": "0.0.x",
+    "fantasy-identities": "0.0.x"
+  },
+  "scripts": {
+      "test": "node --harmony_destructuring node_modules/.bin/nodeunit test/*.js"
+  },
+  "files": ["fantasy-readers.js", "src/*.js"],
+  "main": "fantasy-readers.js"
 }
