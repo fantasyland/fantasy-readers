@@ -1,6 +1,6 @@
 {
   "name": "fantasy-readers",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Reader control structure.",
   "main": "reader.js",
   "repository": {
