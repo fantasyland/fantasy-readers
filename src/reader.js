@@ -42,6 +42,15 @@ Reader.ReaderT = (M) => {
         });
     };
 
+    ReaderT.prototype.map = function(f) {
+        return this.chain((a) => ReaderT.of(f(a)))
+    };
+
+    ReaderT.prototype.ap = function(a) {
+        return this.chain((f) => a.map(f));
+    };
+
+
     return ReaderT;
 };
 
