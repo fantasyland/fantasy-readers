@@ -33,11 +33,24 @@ exports.reader = {
     'Associativity (Monad)': monad.associativity(λ)(Reader, run)
 };
 
-exports.readerT = {
+const ReaderT = Reader.ReaderT(Identity)
 
+exports.readerT = {
+    // Applicative Functor tests
+    'All (Applicative)': applicative.laws(λ)(ReaderT, run),
+    'Identity (Applicative)': applicative.identity(λ)(ReaderT, run),
+    'Composition (Applicative)': applicative.composition(λ)(ReaderT, run),
+    'Homomorphism (Applicative)': applicative.homomorphism(λ)(ReaderT, run),
+    'Interchange (Applicative)': applicative.interchange(λ)(ReaderT, run),
+
+    // Functor tests
+    'All (Functor)': functor.laws(λ)(ReaderT.of, run),
+    'Identity (Functor)': functor.identity(λ)(ReaderT.of, run),
+    'Composition (Functor)': functor.composition(λ)(ReaderT.of, run),
+    
     // Monad tests
-    'All (Monad)': monad.laws(λ)(Reader.ReaderT(Identity), run),
-    'Left Identity (Monad)': monad.leftIdentity(λ)(Reader.ReaderT(Identity), run),
-    'Right Identity (Monad)': monad.rightIdentity(λ)(Reader.ReaderT(Identity), run),
-    'Associativity (Monad)': monad.associativity(λ)(Reader.ReaderT(Identity), run)
+    'All (Monad)': monad.laws(λ)(ReaderT, run),
+    'Left Identity (Monad)': monad.leftIdentity(λ)(ReaderT, run),
+    'Right Identity (Monad)': monad.rightIdentity(λ)(ReaderT, run),
+    'Associativity (Monad)': monad.associativity(λ)(ReaderT, run)
 };
