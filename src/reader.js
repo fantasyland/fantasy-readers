@@ -50,7 +50,6 @@ Reader.ReaderT = (M) => {
         return this.chain((f) => a.map(f));
     };
 
-
     return ReaderT;
 };
 
